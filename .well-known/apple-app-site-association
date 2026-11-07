@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["5WJ92PXT3P.com.jjfazm.gonudge"],
+        "components": [
+          { "/": "/goorelse/join/*", "comment": "GoOrElse グループ招待" }
+        ]
+      }
+    ]
+  }
+}
