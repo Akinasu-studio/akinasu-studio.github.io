@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>スタンプカード</title>
+</head>
+<body>
+  <script>
+    const token = new URLSearchParams(window.location.search).get('token');
+    if (token) {
+      window.location.href = 'stampcard://stamp?token=' + token;
+    }
+  </script>
+  <p>アプリを起動中...</p>
+</body>
+</html>
