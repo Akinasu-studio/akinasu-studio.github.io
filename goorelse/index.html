@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoOrElse - 通う習慣をつくる / Show up every time</title>
+  <meta name="description" content="GoOrElse は、場所と時間を決めて「行く」予定を守る iPhone アプリ。達成すればスタンプ、サボれば罰ゲーム。サポート・お問い合わせ。">
+  <style>
+    :root { --paper:#F3EFE6; --ink:#1C1B19; --red:#D8432B; --indigo:#2E5A78; --line:#1C1B19; --mute:#5b574f; }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+      line-height: 1.8; overflow-wrap: anywhere;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 28px 20px 48px; }
+    a { color: var(--red); }
+    .eyebrow { color: var(--indigo); font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin: 0; }
+    h1 { font-size: 2.2rem; line-height: 1.2; margin: .2em 0 .1em; letter-spacing: .01em; }
+    h1 .or { color: var(--red); }
+    .lead { font-size: 1.05rem; margin: .4em 0 1.2em; }
+    .ticket { border: 2px solid var(--line); background: var(--paper); padding: 18px 18px; margin: 18px 0; position: relative; }
+    .ticket.dashed { border-style: dashed; }
+    .ticket .stub { border-top: 2px dashed var(--line); margin: 14px -18px 0; padding: 10px 18px 0; font-size: .85rem; color: var(--mute); }
+    .stamp { display: inline-block; border: 3px solid var(--red); color: var(--red); font-weight: 800; letter-spacing: .12em; padding: 2px 12px; transform: rotate(-4deg); font-size: .95rem; margin-right: 8px; }
+    .stamp.ink { border-color: var(--ink); color: var(--ink); }
+    h2 { font-size: 1.25rem; margin: 2.2em 0 .6em; padding-bottom: 6px; border-bottom: 2px solid var(--line); }
+    h2 small { display: block; color: var(--indigo); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 2px; }
+    h3 { font-size: 1rem; margin: 1.2em 0 .2em; }
+    ul { padding-left: 1.2em; margin: .4em 0; }
+    li { margin: .35em 0; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 560px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .grid .ticket { margin: 0; }
+    .grid h3 { margin-top: 0; color: var(--indigo); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; }
+    .grid p { margin: .3em 0 0; font-size: .95rem; line-height: 1.7; }
+    details { border-bottom: 1px dashed var(--line); padding: 10px 0; }
+    summary { cursor: pointer; font-weight: 700; }
+    details p { margin: .5em 0 0; }
+    table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+    th, td { border: 1.5px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+    th { background: transparent; color: var(--indigo); font-size: .78rem; letter-spacing: .08em; }
+    .en { margin-top: 3.5em; padding-top: 1.5em; border-top: 3px double var(--line); }
+    footer { margin-top: 3em; font-size: .85rem; color: var(--mute); border-top: 2px dashed var(--line); padding-top: 14px; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== 日本語 ===== -->
+  <section id="ja" lang="ja">
+    <p class="eyebrow">Akinasu Studio / iPhone App</p>
+    <h1>Go<span class="or">Or</span>Else</h1>
+    <p class="lead"><strong>通う・出かけるを、習慣に。</strong><br>ジム、図書館、自習室。行くと決めた場所に、ちゃんと行くための iPhone アプリです。</p>
+
+    <div class="ticket">
+      <span class="stamp">達成</span>
+      <p>「今日は図書館に1時間いる」「夕方にジムへ行く」。場所・時間帯・滞在時間を決めて予定を作ります。到着と滞在は iPhone の位置情報（リージョンモニタリング）で端末上で検出。必要な時間いられたら<strong>達成</strong>のスタンプ。行けなかった日は、先に決めておいた自分のルール（軽い罰）をこなします。</p>
+      <div class="stub">対応: iPhone / iOS 18 以降</div>
+    </div>
+
+    <h2><small>Features</small>主な機能</h2>
+    <div class="grid">
+      <div class="ticket"><h3>プラン</h3><p>場所・時間帯・滞在時間を決めて予定を作成。到着と滞在を自動で検出します。</p></div>
+      <div class="ticket"><h3>罰ゲームルーレット</h3><p>未達成なら、自分で用意した罰ゲームリスト（例: 腕立て伏せ20回）からルーレットで1つ決定。罰ゲームは自己申告制です。</p></div>
+      <div class="ticket"><h3>リカバリーミッション</h3><p>歩数（ヘルスケア / CoreMotion）をクリアすれば罰ゲームを取り消せます。</p></div>
+      <div class="ticket"><h3>スキップチケット</h3><p>罰ゲームなしで予定をキャンセルできるチケット（初期設定は月2枚）。</p></div>
+      <div class="ticket"><h3>ウィジェット・リマインダー</h3><p>ホーム画面のウィジェットと通知で予定を忘れません。</p></div>
+      <div class="ticket"><h3>履歴・統計</h3><p>カレンダーで達成の記録を振り返れます。</p></div>
+      <div class="ticket"><h3>グループ（任意）</h3><p>招待リンクで最大8人まで（iCloud を利用）。予定のタイトル・時間・結果・罰ゲームを共有し、リアクションや短いメモ（200文字まで）を送れます。全員が同じ場所へ行く「グループプラン」では、罰ゲームを全員に課すか、未達成者だけに課すかを選べます。</p></div>
+      <div class="ticket"><h3>チケット風デザイン</h3><p>チケットとスタンプをモチーフにした見た目です。</p></div>
+    </div>
+
+    <h2><small>Plans</small>無料版と Pro</h2>
+    <table>
+      <tr><th>項目</th><th>無料</th><th>Pro</th></tr>
+      <tr><td>プラン作成</td><td>1日2件まで</td><td>制限なし</td></tr>
+      <tr><td>登録できる場所</td><td>5件</td><td>制限なし</td></tr>
+      <tr><td>カスタム罰ゲーム</td><td>5件</td><td>制限なし</td></tr>
+      <tr><td>履歴</td><td>今月・先月</td><td>制限なし</td></tr>
+      <tr><td>グループ</td><td>作成3 / 参加3、グループプランは1日1件</td><td>制限なし</td></tr>
+      <tr><td>広告</td><td>あり</td><td>なし</td></tr>
+    </table>
+    <p style="font-size:.9rem">Pro は一度の購入で使い続けられる買い切り（非消耗型）のアプリ内課金です。</p>
+
+    <h2><small>FAQ</small>よくある質問</h2>
+    <details><summary>アカウント登録は必要ですか？</summary><p>不要です。開発者のサーバーもありません。データは端末内に保存されます。詳しくは<a href="privacy-policy.html">プライバシーポリシー</a>をご覧ください。</p></details>
+    <details><summary>位置情報は「常に許可」が必要ですか？</summary><p>アプリを閉じていても到着を検出するため、「常に」の許可をおすすめしています。位置情報は、あなたが登録した場所への到着検出にのみ使い、個人の場所の座標が端末の外に送られることはありません。</p></details>
+    <details><summary>到着したのに達成になりません</summary><p>iOS の設定で本アプリの位置情報が「常に」、「正確な位置情報」がオンになっているか、低電力モードや機内モードでないかをご確認ください。リージョンモニタリングは数分の遅れが出ることがあります。</p></details>
+    <details><summary>罰ゲームは強制されますか？</summary><p>いいえ。罰ゲームは自己申告制で、アプリが実行を強制したり確認したりすることはありません。</p></details>
+    <details><summary>スキップチケットとは？</summary><p>罰ゲームなしで予定をキャンセルできるチケットです。初期設定では月に2枚です。</p></details>
+    <details><summary>グループに参加するには？</summary><p>グループのメンバーから届いた招待リンクを開くと参加できます。iCloud にサインインしている必要があります。グループは最大8人です。</p></details>
+    <details><summary>グループから抜けたら、自分のデータはどうなりますか？</summary><p>グループから退出、またはグループを削除すると、あなたのグループデータは iCloud から削除されます。</p></details>
+    <details><summary>Pro を購入済みなのに無料版のままです</summary><p>設定の「Pro にする」から開く購入画面で「購入を復元」をお試しください。解決しない場合は下記までご連絡ください。</p></details>
+    <details><summary>データを削除するには？</summary><p>アプリを削除すると端末内のデータが消えます。グループのデータはグループの退出・削除で消えます。</p></details>
+
+    <h2><small>Contact</small>お問い合わせ</h2>
+    <div class="ticket dashed">
+      <p style="margin-top:0">不具合・ご質問・ご要望は、下記のメールアドレスまでご連絡ください。機種・iOS のバージョン・状況を添えていただけるとスムーズです。</p>
+      <p style="margin-bottom:0"><a href="mailto:gisazm2017@gmail.com">gisazm2017@gmail.com</a></p>
+    </div>
+    <p><a href="privacy-policy.html">プライバシーポリシー</a></p>
+  </section>
+
+  <!-- ===== English ===== -->
+  <section id="en" class="en" lang="en">
+    <p class="eyebrow">Akinasu Studio / iPhone App</p>
+    <h1 style="font-size:1.7rem">Show up every time.</h1>
+    <p class="lead"><strong>Make showing up a habit.</strong> GoOrElse helps you actually go to the gym, the library or wherever you planned. Pick a place, a time window and how long to stay.</p>
+
+    <div class="ticket">
+      <span class="stamp">ACHIEVED</span><span class="stamp ink">PENALTY</span>
+      <p>"One hour at the library today." "The gym this evening." Set a plan with a place, a time window and a stay duration. Arrival and stay are detected on your device using iOS region monitoring. Stay long enough and you earn a <strong>stamp</strong>. Don't, and you owe a <strong>penalty</strong>.</p>
+      <div class="stub">Requires iPhone with iOS 18 or later</div>
+    </div>
+
+    <h2><small>Features</small>Main features</h2>
+    <div class="grid">
+      <div class="ticket"><h3>Plans</h3><p>Set a place, time window and stay duration. Arrival and stay are detected automatically.</p></div>
+      <div class="ticket"><h3>Penalty roulette</h3><p>If you miss, a roulette draws one item from your own penalty list (e.g. 20 push-ups). Penalties are self-reported.</p></div>
+      <div class="ticket"><h3>Recovery mission</h3><p>Reach a step-count goal (Apple Health / CoreMotion) to cancel the penalty.</p></div>
+      <div class="ticket"><h3>Skip tickets</h3><p>Cancel a plan without a penalty (2 per month by default).</p></div>
+      <div class="ticket"><h3>Widgets and reminders</h3><p>Home Screen widgets and notifications keep your plans in sight.</p></div>
+      <div class="ticket"><h3>History and stats</h3><p>Look back at your results on a calendar.</p></div>
+      <div class="ticket"><h3>Groups (optional)</h3><p>Up to 8 people per group via invite links (uses iCloud). Members see each other's shared plan titles, times, results and penalties, and can react and write short notes (up to 200 characters). In group plans everyone goes to the same place, and the penalty applies to everyone or only to those who missed.</p></div>
+      <div class="ticket"><h3>Ticket-style design</h3><p>A look inspired by tickets and stamps.</p></div>
+    </div>
+
+    <h2><small>Plans</small>Free and Pro</h2>
+    <table>
+      <tr><th>Item</th><th>Free</th><th>Pro</th></tr>
+      <tr><td>Plans</td><td>2 per day</td><td>Unlimited</td></tr>
+      <tr><td>Saved places</td><td>5</td><td>Unlimited</td></tr>
+      <tr><td>Custom penalties</td><td>5</td><td>Unlimited</td></tr>
+      <tr><td>History</td><td>This and last month</td><td>Unlimited</td></tr>
+      <tr><td>Groups</td><td>Create 3 / join 3; 1 group plan per day</td><td>Unlimited</td></tr>
+      <tr><td>Ads</td><td>Yes</td><td>No</td></tr>
+    </table>
+    <p style="font-size:.9rem">Pro is a one-time in-app purchase (non-consumable).</p>
+
+    <h2><small>FAQ</small>Frequently asked questions</h2>
+    <details><summary>Do I need an account?</summary><p>No. There is no sign-up and no developer server. Your data stays on your device. See the <a href="privacy-policy.html">Privacy Policy</a>.</p></details>
+    <details><summary>Do I need "Always" location permission?</summary><p>We recommend "Always" so arrival can be detected even when the app is closed. Location is used only to detect arrival at places you saved, and the coordinates of your personal places never leave your device.</p></details>
+    <details><summary>I arrived but the plan wasn't marked as achieved.</summary><p>In iOS Settings, check that location access for this app is "Always" with Precise Location on, and that Low Power Mode or Airplane Mode isn't interfering. Region monitoring can be delayed by a few minutes.</p></details>
+    <details><summary>Is the penalty enforced?</summary><p>No. Penalties are self-reported; the app neither enforces nor verifies them.</p></details>
+    <details><summary>What is a skip ticket?</summary><p>A ticket that cancels a plan without a penalty. You get 2 per month by default.</p></details>
+    <details><summary>How do I join a group?</summary><p>Open the invite link a group member sent you. You need to be signed in to iCloud. A group holds up to 8 people.</p></details>
+    <details><summary>What happens to my data if I leave a group?</summary><p>Leaving or deleting a group removes your group data from iCloud.</p></details>
+    <details><summary>I bought Pro but the app still shows the free version.</summary><p>Open Settings &gt; &quot;Pro にする&quot; and tap &quot;購入を復元&quot; (Restore) on the purchase screen. If it doesn't help, contact us below.</p></details>
+    <details><summary>How do I delete my data?</summary><p>Deleting the app removes the data on your device. Group data is removed by leaving or deleting the group.</p></details>
+
+    <h2><small>Contact</small>Contact</h2>
+    <div class="ticket dashed">
+      <p style="margin-top:0">For bugs, questions or feedback, please email us. Including your device model, iOS version and what happened helps.</p>
+      <p style="margin-bottom:0"><a href="mailto:gisazm2017@gmail.com">gisazm2017@gmail.com</a></p>
+    </div>
+    <p><a href="privacy-policy.html">Privacy Policy</a></p>
+  </section>
+
+  <footer>&copy; 2026 Akinasu Studio</footer>
+</div>
+</body>
+</html>
