@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="no-referrer">
+  <title>旅行への招待 - Kawase | Trip invitation - Kawase</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif; max-width: 480px; margin: 0 auto; padding: 32px 20px; color: #1a1a1a; line-height: 1.8; text-align: center; }
+    img.icon { width: 96px; height: 96px; border-radius: 22px; display: block; margin: 0.5em auto; }
+    h1 { font-size: 1.4em; color: #173d2d; margin: 0.6em 0; }
+    p { margin: 0.6em 0; }
+    a { color: #23704f; }
+    .btn { display: block; box-sizing: border-box; width: 100%; padding: 16px; margin: 14px 0; border-radius: 14px; font-size: 1.15em; font-weight: bold; text-decoration: none; }
+    .btn.primary { background: #2E7D5B; color: #fff; }
+    .btn.secondary { background: #eef8f2; color: #173d2d; border: 1px solid #a8d8bf; font-size: 1em; }
+    .code { font-family: ui-monospace, Menlo, monospace; font-size: 1.5em; letter-spacing: 0.12em; background: #eef8f2; border: 1px solid #a8d8bf; border-radius: 10px; padding: 8px 12px; margin: 0.4em 0; user-select: all; word-break: break-all; }
+    .hint { font-size: 0.9em; color: #555; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <img class="icon" src="../../images/kawase_icon_1024.png" alt="Kawase" width="96" height="96">
+
+  <div id="valid" hidden>
+    <h1 data-i="title"></h1>
+    <a id="open" class="btn primary" href="#" data-i="open"></a>
+    <p class="hint" data-i="codeLabel"></p>
+    <p id="code" class="code"></p>
+    <p class="hint" data-i="paste"></p>
+    <a class="btn secondary" href="https://apps.apple.com/app/id6835717269" data-i="store"></a>
+  </div>
+
+  <div id="invalid" hidden>
+    <h1 data-i="badTitle"></h1>
+    <p data-i="badBody"></p>
+    <a class="btn secondary" href="https://apps.apple.com/app/id6835717269" data-i="store"></a>
+  </div>
+
+  <p class="hint"><a href="../privacy-policy.html" data-i="privacy"></a></p>
+
+  <script>
+    (function () {
+      var ja = /^ja\b/i.test(navigator.language || "");
+      var T = {
+        ja: { title: "旅行に招待されています", open: "Kawase で開く", codeLabel: "招待コード", paste: "開けない場合は、アプリの「招待コードで参加」にこのコードを貼り付けてください。", store: "App Store で入手", badTitle: "招待リンクが正しくありません", badBody: "リンクが途中で切れているか、古い可能性があります。招待した人に、もう一度リンクを送ってもらってください。", privacy: "プライバシーポリシー" },
+        en: { title: "You're invited to a trip", open: "Open in Kawase", codeLabel: "Invite code", paste: "If it doesn't open, paste this code into \"Join with invite code\" in the app.", store: "Get it on the App Store", badTitle: "This invite link is not valid", badBody: "The link may be cut off or outdated. Ask the person who invited you to send it again.", privacy: "Privacy Policy" }
+      }[ja ? "ja" : "en"];
+      document.documentElement.lang = ja ? "ja" : "en";
+      var els = document.querySelectorAll("[data-i]");
+      for (var i = 0; i < els.length; i++) els[i].textContent = T[els[i].getAttribute("data-i")];
+
+      // Hash format: #<tripId UUID>.<code [A-Z2-9]{8,16}>  (never sent anywhere)
+      var m = /^#([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})\.([A-Z2-9]{8,16})$/.exec(location.hash);
+      if (m) {
+        var tripId = m[1], code = m[2];
+        document.getElementById("open").href = "kawase://join?t=" + encodeURIComponent(tripId) + "&c=" + encodeURIComponent(code);
+        document.getElementById("code").textContent = code;
+        document.getElementById("valid").hidden = false;
+      } else {
+        document.getElementById("invalid").hidden = false;
+      }
+    })();
+  </script>
+</body>
+</html>

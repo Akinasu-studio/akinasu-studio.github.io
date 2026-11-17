@@ -24,11 +24,17 @@
   <p>「Kawase — 実レートで割り勘」(以下「本アプリ」)のプライバシーポリシーです。</p>
 
   <div class="notice">
-    <strong>要点：</strong>本アプリは、アカウント登録を必要とせず、利用者の個人を特定できる情報を収集しません。記録はすべて端末内に保存され、開発者のサーバーへ送信されません。分析ツール・広告・トラッキングは使用していません。
+    <strong>要点：</strong>本アプリは、アカウント登録を必要とせず、利用者の個人を特定できる情報を収集しません。共有していない旅行の記録は端末内にのみ保存されます。旅行を共有した場合に限り、その旅行の内容が Google Firebase に保存されます。分析ツール・広告・トラッキングは使用していません。
   </div>
 
   <h2>保存するデータ</h2>
-  <p>旅行・メンバー・支払い・両替の記録は、お使いの端末の中(SwiftData)だけに保存されます。開発者のサーバーに送信されることはありません。アカウント登録は不要です。</p>
+  <p>共有していない旅行の記録(旅行・メンバー・支払い・両替)は、お使いの端末の中(SwiftData)だけに保存されます。開発者のサーバーに送信されることはありません。アカウント登録は不要です。</p>
+  <p>旅行のカバー写真は端末内にのみ保存され、アップロードされません。</p>
+
+  <h2>共有した旅行のデータ</h2>
+  <p>利用者が旅行の共有を選んだとき、または招待リンクで旅行に参加したときに限り、その旅行の内容(旅行名、日程、通貨、メンバー名、各メンバーの母国通貨、支払い、両替、誰がどの記録を削除したか、旅行の作成者が確定した参考レート)が、旅行の参加者が閲覧・編集できるように、Google Firebase(Cloud Firestore、東京リージョン)に保存されます。</p>
+  <p>アクセス制御のため、Firebase Authentication が発行する匿名の識別子を使用します。氏名・メールアドレス・電話番号は収集しません。招待リンクを知っている参加者だけが、その旅行にアクセスできます。</p>
+  <p>Google による情報の取り扱いについては、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google プライバシーポリシー</a>および <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase のプライバシーとセキュリティ</a>をご確認ください。</p>
 
   <h2>外部との通信</h2>
   <p>参考為替レートを取得するために、次のサービスに<strong>通貨コードと日付だけ</strong>を送信します。記録の内容(金額・名前など)は送信しません。</p>
@@ -46,6 +52,7 @@
 
   <h2>データの削除</h2>
   <p>本アプリを削除すると、端末内のすべての記録が削除されます。旅行ごとに削除することもできます。</p>
+  <p>共有した旅行のデータは、旅行の作成者が削除できます。参加者は、その旅行を自分の端末から削除することで同期を止められます。削除のご依頼は、下記のお問い合わせ先までご連絡ください。</p>
 
   <h2>お問い合わせ</h2>
   <p>ご不明な点は、以下までご連絡ください。<br>
@@ -60,11 +67,17 @@
   <p>This is the privacy policy for Kawase — Split at Real Rates ("the App").</p>
 
   <div class="notice">
-    <strong>Summary:</strong> The App requires no account and does not collect any personally identifiable information. All records stay on your device and are never sent to the developer's servers. The App uses no analytics, advertising, or tracking.
+    <strong>Summary:</strong> The App requires no account and does not collect any personally identifiable information. Records of trips you do not share stay on your device only. Only if you choose to share a trip (or join one by invite) is that trip's content stored on Google Firebase. The App uses no analytics, advertising, or tracking.
   </div>
 
   <h2>Data stored</h2>
-  <p>Trips, members, expenses, and exchanges are stored only on your device (SwiftData). Nothing is sent to the developer's servers. No account is required.</p>
+  <p>Records of trips you do not share (trips, members, expenses, and exchanges) are stored only on your device (SwiftData). Nothing is sent to the developer's servers. No account is required.</p>
+  <p>Trip cover photos stay on your device and are never uploaded.</p>
+
+  <h2>Shared trips</h2>
+  <p>Only when you choose to share a trip, or join one through an invite link, the trip's contents (trip name, dates, currencies, member names, members' home currencies, expenses, exchanges, who deleted which record, and the trip creator's confirmed reference rates) are stored on Google Firebase (Cloud Firestore, Tokyo region) so that trip participants can view and edit them.</p>
+  <p>An anonymous identifier issued by Firebase Authentication is used to control access. No name, email address, or phone number is collected. Only participants who have the invite link can access the trip.</p>
+  <p>For how Google handles data, see the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy and Security</a>.</p>
 
   <h2>Network</h2>
   <p>To fetch reference exchange rates, the App sends <strong>only currency codes and dates</strong> to the services below. Your records (amounts, names, etc.) are never sent.</p>
@@ -82,6 +95,7 @@
 
   <h2>Deleting data</h2>
   <p>Deleting the App removes all records from your device. You can also delete individual trips.</p>
+  <p>The creator of a shared trip can delete its shared data. Participants can stop syncing by deleting the trip from their device. To request deletion, contact us at the address below.</p>
 
   <h2>Contact</h2>
   <p>Akinasu Studio<br>
