@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
   <meta name="referrer" content="no-referrer">
-  <title>旅行への招待 - Kawase | Trip invitation - Kawase</title>
+  <title>グループへの招待 - Evenso | Group invitation - Evenso</title>
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif; max-width: 480px; margin: 0 auto; padding: 32px 20px; color: #1a1a1a; line-height: 1.8; text-align: center; }
     img.icon { width: 96px; height: 96px; border-radius: 22px; display: block; margin: 0.5em auto; }
@@ -21,7 +21,7 @@
   </style>
 </head>
 <body>
-  <img class="icon" src="../../images/kawase_icon_1024.png" alt="Kawase" width="96" height="96">
+  <img class="icon" src="../../images/kawase_icon_1024.png" alt="Evenso" width="96" height="96">
 
   <div id="valid" hidden>
     <h1 data-i="title"></h1>
@@ -44,8 +44,8 @@
     (function () {
       var ja = /^ja\b/i.test(navigator.language || "");
       var T = {
-        ja: { title: "旅行に招待されています", open: "Kawase で開く", codeLabel: "招待コード", paste: "開けない場合は、アプリの「招待コードで参加」にこのコードを貼り付けてください。", store: "App Store で入手", badTitle: "招待リンクが正しくありません", badBody: "リンクが途中で切れているか、古い可能性があります。招待した人に、もう一度リンクを送ってもらってください。", privacy: "プライバシーポリシー" },
-        en: { title: "You're invited to a trip", open: "Open in Kawase", codeLabel: "Invite code", paste: "If it doesn't open, paste this code into \"Join with invite code\" in the app.", store: "Get it on the App Store", badTitle: "This invite link is not valid", badBody: "The link may be cut off or outdated. Ask the person who invited you to send it again.", privacy: "Privacy Policy" }
+        ja: { title: "グループに招待されています", open: "Evenso で開く", codeLabel: "招待コード", paste: "開けない場合は、アプリの「招待コードで参加」にこのコードを貼り付けてください。", store: "App Store で入手", badTitle: "招待リンクが正しくありません", badBody: "リンクが途中で切れているか、古い可能性があります。招待した人に、もう一度リンクを送ってもらってください。", privacy: "プライバシーポリシー" },
+        en: { title: "You're invited to a group", open: "Open in Evenso", codeLabel: "Invite code", paste: "If it doesn't open, paste this code into \"Join with invite code\" in the app.", store: "Get it on the App Store", badTitle: "This invite link is not valid", badBody: "The link may be cut off or outdated. Ask the person who invited you to send it again.", privacy: "Privacy Policy" }
       }[ja ? "ja" : "en"];
       document.documentElement.lang = ja ? "ja" : "en";
       var els = document.querySelectorAll("[data-i]");
