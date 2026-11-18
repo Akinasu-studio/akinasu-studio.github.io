@@ -11,6 +11,16 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://akinasu-studio.github.io/courtside/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://akinasu-studio.github.io/courtside/privacy-policy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://akinasu-studio.github.io/kawase/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
